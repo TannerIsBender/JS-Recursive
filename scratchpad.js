@@ -102,4 +102,42 @@ function tribFunction(n) {
     return { 'seq': seq, 'html': div };
 }
 
+var fib = function (n, node) {
+    var context = fibFunction(n)
+    node.appendChild(context.html);
+    node.setAttribute("id", "x");
+}
+var pell = function (n, node){
+    var context = pellFunction(n)
+    node.appendChild(context.html);
+    node.setAttribute("id", "x");
+}
+var trib = function (n, node){
+    var context = tribFunction(n)
+    node.appendChild(context.html);
+    node.setAttribute("id", "x");
+}
+
+var divCreator = function(color, id) {
+    return function() {
+        var div = document.createElement('div');
+        div.setAttribute('class', color);
+        div.setAttribute('id', id);
+        document.body.appendChild(div);
+    }
+}
+
+
+var firstDiv = divCreator('first', 'fib');
+var secondDiv = divCreator('second', 'pell');
+var thirdDiv = divCreator('third', 'trib');
+
+firstDiv();
+secondDiv();
+thirdDiv();
+
+fib(11, document.querySelector('.first'));
+pell(11, document.querySelector('.second'));
+trib(11, document.querySelector('.third'));
+
 document.title = "Recursive JavaScript";
