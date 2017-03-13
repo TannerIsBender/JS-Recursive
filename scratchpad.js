@@ -127,6 +127,64 @@ var divCreator = function(color, id) {
     }
 }
 
+var style = document.createElement('style');
+style.textContent =
+    "#x {" +
+    "	display: inline-block;" +
+    "	width: auto;" +
+    "}" +
+    "" +
+    ".x {" +
+    "	background-color: rgba(255,255,2,.3);" +
+    "}" +
+    "" +
+    ".x-left {" +
+    "	float: left;" +
+    "	display: inline-block;" +
+    "	margin-right: 4px;" +
+    "}" +
+    "" +
+    ".x-right {" +
+    "	float: right;" +
+    "	display: inline-block;" +
+    "	margin-left: 4px;" +
+    "}" +
+    "" +
+    ".x-mid {" +
+    "	display: inline-block;" +
+    "	margin: auto;" +
+    "}" +
+    "" +
+    ".shadow {" +
+    "	text-shadow: 1px 2px 3px black;" +
+    "	color:       white;" +
+    "}" +
+    ".box {" +
+    "	font-family: 'helvetica neue', helvetica, sans-serif;" +
+    "	text-align: center;" +
+    "	padding: 4px 8px;" +
+    "	margin: 12px;" +
+    "	border-width: 2px;" +
+    "	border-style: solid;" +
+    "	border-radius: 12px;" +
+    "}" +
+    "" +
+    ".first {" +
+    "	border-color: black;" +
+    "	background:   red;" +
+    "}" +
+    "" +
+    ".second {" +
+    "	border-color: black;" +
+    "	background:   green;" +
+    "}" +
+    "" +
+    ".third {" +
+    "	border-color: black;" +
+    "	background:   blue;" +
+    "}";
+
+document.querySelector('body').appendChild(style);
 
 var firstDiv = divCreator('first', 'fib');
 var secondDiv = divCreator('second', 'pell');
